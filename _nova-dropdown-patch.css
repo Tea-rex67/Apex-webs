@@ -1,0 +1,26 @@
+/* Nova dropdown behavior (click-only) patch */
+
+/* Hide by default */
+.nova-drop-menu {
+  display: none;
+}
+
+/* Show when parent has .open */
+.nova-has-dropdown.open > .nova-drop-menu {
+  display: block;
+}
+
+.nova-drop-menu .nova-drop-link:hover {
+  background: var(--primary);
+  color: white;
+}
+.nova-drop-menu {
+    z-index: 99999;
+}
+
+@media (min-width: 991.98px) {
+    .nova-drop-menu {
+        z-index: 5000;
+        margin: 0.5rem 35rem ; 
+    }
+}

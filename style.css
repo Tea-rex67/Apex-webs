@@ -1,0 +1,217 @@
+/* Apex Web Solutions - style.css */
+
+/* Note: responsive fixes live in responsive-fix.css */
+
+
+/* CSS variables are managed in theme.css */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Premium focus styles */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary) 70%, white 30%);
+  outline-offset: 2px;
+}
+
+/* Subtle gradient accents */
+.bg-gradient-primary {
+  background: radial-gradient(1200px 600px at 10% 0%, color-mix(in srgb, var(--primary) 25%, transparent 75%), transparent 60%),
+    radial-gradient(900px 500px at 90% 20%, rgba(124, 58, 237, 0.18), transparent 55%);
+}
+
+/* Reusable card shadow */
+.apx-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .apx-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Buttons */
+.apx-btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  will-change: transform;
+}
+
+.apx-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+
+body.dark .apx-btn:hover {
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.25);
+}
+
+/* Navbar spacing + layering */
+.apx-navbar-actions {
+  gap: 0.75rem;
+}
+
+/* Make sure dropdown menu sits above offcanvas */
+.navbar .dropdown-menu {
+  z-index: 9900;
+  max-width: 500px;}
+
+/* For offcanvas */
+.mobile-drawer .dropdown-menu {
+  z-index: 2050;
+  background-color: #fff;
+  width: 100%;
+  width: 12%;
+}
+
+
+
+/* Ensure dropdown renders above offcanvas/backdrop */
+.offcanvas .dropdown-menu,
+.offcanvas .dropdown-menu.show {
+  z-index: 2000;
+}
+
+/* Make dropdowns inside offcanvas clickable without overlap */
+.offcanvas .dropdown-item {
+  position: relative;
+  z-index: 2001;
+}
+
+
+/* Section spacing */
+.section-pad {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Reveal animation hook */
+.apx-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+/* Ensure mobile drawer/dropdowns are above page content */
+.apx-header {
+  position: sticky;
+  z-index: 1050;
+}
+
+/* Offcanvas should be above the rest of the page */
+.offcanvas {
+  z-index: 2000;
+}
+
+/* Backdrop also must not be above the dropdown */
+.offcanvas-backdrop {
+  z-index: 1990;
+}
+
+/* Dropdowns inside offcanvas must be clickable on top */
+.offcanvas .dropdown-menu,
+.offcanvas .dropdown-menu.show {
+  z-index: 2010;
+}
+
+.offcanvas .dropdown-item {
+  position: relative;
+  z-index: 2011;
+}
+
+
+
+.apx-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pricing plan card animations */
+.apx-plan-card {
+  transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  will-change: transform;
+}
+
+.apx-plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(37, 99, 235, 0.16);
+}
+
+body.dark .apx-plan-card:hover {
+  box-shadow: 0 20px 48px rgba(124, 58, 237, 0.22);
+}
+
+.apx-plan-card.apx-reveal.is-visible {
+  animation: apx-plan-pop 520ms ease both;
+}
+
+@keyframes apx-plan-pop {
+  from { transform: translateY(12px) scale(0.99); }
+  to { transform: translateY(0) scale(1); }
+}
+
+/* Reveal animation hook */
+.apx-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.apx-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth underline */
+.apx-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.apx-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.apx-link:hover::after {
+  transform: scaleX(1);
+}
+
+.apx-multi {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: rgb(3, 64, 105);
+  border: 1px blue solid;
+}
+

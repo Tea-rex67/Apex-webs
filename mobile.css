@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --nav-h: 78px;
+
+  --brand: #2563eb;
+  --brand-hover: #1d4ed8;
+
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.98);
+
+  --text: #0f172a;
+  --text-soft: #64748b;
+
+  --border: #e2e8f0;
+  --border-soft: #f1f5f9;
+
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+  --round: 14px;
+  --speed: all 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* FIX: BODY BACKGROUND */
+body {
+  background: var(--bg);
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* HEADER */
+.nova-header {
+  height: var(--nav-h);
+  width: 100%;
+  background: white !important; /* IMPORTANT FIX */
+  border-bottom: 1px solid var(--border);
+  z-index: 9999;
+}
+
+.nova-sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* NAV */
+.nova-nav {
+  height: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+
+/* ACTIONS */
+.nova-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* THEME BUTTON */
+.nova-theme-toggle {
+  padding: 10px 16px;
+  border-radius: var(--round);
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--speed);
+}
+
+.nova-theme-toggle:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.nova-full {
+  width: 100%;
+}
+
+/* HAMBURGER */
+.nova-burger {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--round);
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+
+  transition: var(--speed);
+}
+
+.nova-burger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 50px;
+  transition: var(--speed);
+}
+
+.nova-burger:hover {
+  border-color: var(--brand);
+  box-shadow: var(--shadow-soft);
+}
+
+/* BURGER ACTIVE */
+.nova-burger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nova-burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nova-burger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* DESKTOP LINKS */
+.nova-desktop-links {
+  display: flex;
+}
+
+.nova-links-row {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+/* LINKS */
+.nova-link {
+  text-decoration: none;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px 6px;
+  transition: var(--speed);
+  position: relative;
+}
+
+.nova-link:hover {
+  color: var(--brand-hover);
+}
+
+/* ACTIVE LINK */
+.nova-current {
+  color: var(--brand);
+}
+
+.nova-current::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 4px;
+  width: 100%;
+  height: 2px;
+  border-radius: 50px;
+  background: var(--brand);
+}
+
+/* DROPDOWN */
+.nova-hover-dropdown {
+  position: relative;
+}
+
+.nova-drop-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.nova-caret {
+  font-size: 12px;
+  opacity: 0.7;
+  transition: var(--speed);
+}
+
+/* DROPDOWN MENU */
+.nova-drop-menu {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  width: 220px;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  /* click-only: visibility handled by .open in _nova-dropdown-patch.css */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: none;
+  z-index: 5000;
+}
+
+
+
+
+/* DROPDOWN LINKS */
+.nova-drop-link {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  transition: var(--speed);
+}
+
+.nova-drop-link:hover {
+  background: var(--bg-soft);
+  color: var(--brand-hover);
+}
+
+/* MOBILE DRAWER */
+.nova-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 310px;
+  height: 100vh;
+
+  background: white;
+  border-left: 1px solid var(--border);
+
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: var(--speed);
+  z-index: 99999;
+}
+
+.nova-drawer.active {
+  right: 0;
+}
+
+/* DRAWER TOP */
+.nova-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nova-drawer-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+}
+
+/* CLOSE */
+.nova-drawer-close {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--round);
+  border: 1px solid var(--border);
+  background: white;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text);
+  transition: var(--speed);
+}
+
+.nova-drawer-close:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  box-shadow: var(--shadow-soft);
+}
+
+/* DRAWER BODY */
+.nova-drawer-body {
+  margin-top: 18px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* MOBILE THEME */
+.nova-mobile-theme {
+  margin-bottom: 18px;
+}
+
+.nova-divider {
+  height: 1px;
+  background: var(--border);
+  margin:  14px 0;
+  border-radius: 50px;
+}
+
+/* MOBILE LINKS */
+.nova-drawer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nova-drawer-links .nova-link {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  font-weight: 700;
+}
+
+.nova-drawer-links .nova-link:hover {
+  background: var(--bg-soft);
+  border-color: var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .nova-desktop-links {
+    display: none;
+  }
+
+  .nova-burger {
+    display: flex;
+  }
+
+  .nova-hide-mobile {
+    display: none;
+  }
+}
+
+/* Dark theme only applies if html has data-theme="dark" */
+
+html[data-theme="dark"] .nova-header {
+  background: rgba(11, 18, 32, 0.96) !important;
+  border-bottom: 1px solid #1f2a3b;
+}
+
+html[data-theme="dark"] .nova-theme-toggle,
+html[data-theme="dark"] .nova-burger,
+html[data-theme="dark"] .nova-drawer,
+html[data-theme="dark"] .nova-drop-menu,
+html[data-theme="dark"] .nova-drawer-close {
+  background: #0b1220 !important;
+  border-color: #1f2a3b !important;
+}
+
+html[data-theme="dark"] .nova-link,
+html[data-theme="dark"] .nova-drop-link,
+html[data-theme="dark"] .nova-drawer-title {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .nova-brand-sub {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .nova-drop-link:hover {
+  background: rgba(37, 99, 235, 0.14) !important;
+}
+
+html[data-theme="dark"] body {
+  background: #0b1220 !important;
+}

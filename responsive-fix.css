@@ -1,0 +1,57 @@
+
+/* COMPLETE NAVBAR CSS - Mobile Drawer + Desktop */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --nav-height: 80px;
+  --primary: #3b82f6;
+  --primary-h: #2563eb;
+  --text: #1f2937;
+  --text-l: #6b7280;
+  --bg: #ffffff;
+  --bg-glass: rgba(255,255,255,0.95);
+  --border: #e5e7eb;
+  --shadow: 0 10px 40px rgba(0,0,0,0.08);
+  --radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+[data-theme="dark"] {
+  --text: #f8fafc;
+  --text-l: #cbd5e1;
+  --bg: #0f172a;
+  --bg-glass: rgba(15,23,42,0.95);
+  --border: #334155;
+}
+
+/* HEADER */
+header.position-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+}
+
+header.position-sticky:has(.scrolled) {
+  box-shadow: var(--shadow);
+}
+
+/* NAVBAR */
+.navbar {
+  height: 100%;
+    display: flex;}
+
+.nova-drop-menu {
+  display: none !important;
+}
+
+.nova-has-dropdown.open > .nova-drop-menu {
+  display: block !important;
+}
+
+

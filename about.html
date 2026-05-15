@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/mobile.css">
+  <script type="module" src="main.js"></script>
+  <link rel="shortcut icon" href="Apex-logo.png" type="image/x-icon">
+
+  <!-- Bootstrap 5 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="responsive-fix.css">
+  <link rel="stylesheet" href="logo.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="_nova-dropdown-patch.css" />
+    <link rel="stylesheet" href="logo.css">
+</head>
+
+<body class="min-h-screen">
+
+  <!-- Sticky Navbar -->
+  <header class="nova-header nova-sticky">
+    <nav class="nova-nav">
+
+      <!-- Brand -->
+      <a class="nova-brand" href="index.html" aria-label="Apex Web Solutions">
+        <img src="Apex-logo.png" alt="Apex Web Solutions" class="nova-logo">
+      </a>
+
+      <!-- Actions -->
+      <div class="nova-actions">
+
+        <!-- Theme Toggle Desktop -->
+        <button
+          type="button"
+          class="nova-theme-toggle nova-hide-mobile"
+          id="themeToggleBtn"
+          aria-pressed="false"
+          title="Toggle theme">
+          Theme: Dark
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <button
+          class="nova-burger"
+          type="button"
+          aria-label="Open menu"
+          id="mobileMenuBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div
+        class="nova-drawer"
+        tabindex="-1"
+        id="mobileDrawer"
+        aria-labelledby="mobileDrawerTitle">
+
+        <div class="nova-drawer-top">
+          <h5 class="nova-drawer-title" id="mobileDrawerTitle">Menu</h5>
+          <button type="button" class="nova-drawer-close" aria-label="Close" id="drawerCloseBtn">×</button>
+        </div>
+
+        <div class="nova-drawer-body">
+
+          <!-- Theme Toggle Mobile -->
+          <div class="nova-mobile-theme">
+            <button
+              type="button"
+              class="nova-theme-toggle nova-full"
+              id="themeToggleBtnMobile"
+              aria-pressed="false"
+              title="Toggle theme">
+              Theme: Dark
+            </button>
+          </div>
+
+          <ul class="nova-drawer-links">
+
+            <li class="nova-item"><a class="nova-link nova-current" href="index.html">Home</a></li>
+            <li class="nova-item"><a class="nova-link" href="about.html">About</a></li>
+
+           <li class="nova-item nova-has-dropdown">
+              <button class="nova-link nova-drop-btn" type="button">
+                Services <span class="nova-caret">▾</span>
+              </button>
+              <ul class="nova-drop-menu">
+                <li><a class="nova-drop-link" href="service-webdesign.html">Web Design</a></li>
+                <li><a class="nova-drop-link" href="service-webdev.html">Web Development</a></li>
+                <li><a class="nova-drop-link" href="service-seo.html">SEO</a></li>
+              </ul>
+            </li>
+
+            <li class="nova-item"><a class="nova-link" href="portfolio.html">Portfolio</a></li>
+            <li class="nova-item"><a class="nova-link" href="pricing.html">Pricing</a></li>
+            <li class="nova-item"><a class="nova-link" href="testimonials.html">Testimonials</a></li>
+            <li class="nova-item"><a class="nova-link" href="blog.html">Blog</a></li>
+            <li class="nova-item"><a class="nova-link" href="contact.html">Contact</a></li>
+
+            <li class="nova-divider"></li>
+
+            <li class="nova-item nova-has-dropdown">
+              <button class="nova-link nova-drop-btn" type="button">
+                More <span class="nova-caret">▾</span>
+              </button>
+              <ul class="nova-drop-menu">
+                <li><a class="nova-drop-link" href="#services">Services</a></li>
+                <li><a class="nova-drop-link" href="#portfolio">Portfolio</a></li>
+                <li><a class="nova-drop-link" href="#pricing">Pricing</a></li>
+                <li><a class="nova-drop-link" href="#testimonials">Testimonials</a></li>
+                <li><a class="nova-drop-link" href="#faq">FAQ</a></li>
+              </ul>
+            </li>
+
+            <li class="nova-item"><a class="nova-link" href="#projects">Projects</a></li>
+            <li class="nova-item"><a class="nova-link" href="team.html">Team</a></li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="nova-desktop-links">
+        <ul class="nova-links-row">
+
+          <li class="nova-item"><a class="nova-link nova-current" href="index.html">Home</a></li>
+          <li class="nova-item"><a class="nova-link" href="about.html">About</a></li>
+
+           <li class="nova-item nova-has-dropdown">
+              <button class="nova-link nova-drop-btn" type="button">
+                Services <span class="nova-caret">▾</span>
+              </button>
+              <ul class="nova-drop-menu">
+                <li><a class="nova-drop-link" href="service-webdesign.html">Web Design</a></li>
+                <li><a class="nova-drop-link" href="service-webdev.html">Web Development</a></li>
+                <li><a class="nova-drop-link" href="service-seo.html">SEO</a></li>
+              </ul>
+            </li>
+
+          <li class="nova-item"><a class="nova-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nova-item"><a class="nova-link" href="pricing.html">Pricing</a></li>
+          <li class="nova-item"><a class="nova-link" href="testimonials.html">Testimonials</a></li>
+          <li class="nova-item"><a class="nova-link" href="blog.html">Blog</a></li>
+          <li class="nova-item"><a class="nova-link" href="contact.html">Contact</a></li>
+            <li class="nova-item"><a class="nova-link" href="team.html">Team</a></li>
+
+          </ul>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+    <section class="section-pad">
+      <div class="container px-3 px-md-5">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-7">
+            <div class="apx-surface apx-shadow rounded-4 p-5 apx-reveal">
+              <div class="text-sm apx-text-muted">Who we are</div>
+              <h1 class="mt-2 text-4xl md:text-5xl font-extrabold tracking-tight">Premium web experiences, built to perform.</h1>
+              <p class="mt-4 apx-text-muted">Apex Web Solutions is a design-and-build partner for brands that care about clarity, speed, and measurable results. We combine premium UI with robust engineering and SEO foundations.</p>
+              <div class="mt-4 d-flex gap-3 flex-wrap">
+                <span class="badge rounded-pill" style="background: rgba(37,99,235,0.12); color: var(--primary);">UX & UI</span>
+                <span class="badge rounded-pill" style="background: rgba(124,58,237,0.12); color: var(--accent);">Development</span>
+                <span class="badge rounded-pill" style="background: rgba(56,189,248,0.12); color: rgb(56,189,248);">SEO</span>
+                <span class="badge rounded-pill" style="background: rgba(16,185,129,0.12); color: rgb(16,185,129);">Performance</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="apx-surface apx-shadow rounded-4 p-4 apx-reveal h-100">
+              <div class="fw-bold">Our approach</div>
+              <div class="mt-3">
+                <div class="apx-surface rounded-3 p-4 mb-3" style="border:1px solid var(--border)">
+                  <div class="fw-semibold">1. Discover</div>
+                  <div class="apx-text-muted mt-1">Understand goals, audience, and success metrics.</div>
+                </div>
+                <div class="apx-surface rounded-3 p-4 mb-3" style="border:1px solid var(--border)">
+                  <div class="fw-semibold">2. Design</div>
+                  <div class="apx-text-muted mt-1">Premium UI + conversion-focused messaging.</div>
+                </div>
+                <div class="apx-surface rounded-3 p-4" style="border:1px solid var(--border)">
+                  <div class="fw-semibold">3. Build & optimize</div>
+                  <div class="apx-text-muted mt-1">Fast implementation with SEO and accessibility.</div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <a href="contact.html" class="btn btn-apx apx-btn w-100 text-white">Talk to our team</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-12 col-md-6">
+            <div class="apx-surface apx-shadow rounded-4 p-5 apx-reveal h-100">
+              <div class="text-2xl">⚙️</div>
+              <h3 class="mt-2 text-xl font-bold">Engineering that scales</h3>
+              <p class="mt-2 apx-text-muted">Clean component structure and reliable page performance from day one.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="apx-surface apx-shadow rounded-4 p-5 apx-reveal h-100">
+              <div class="text-2xl">📈</div>
+              <h3 class="mt-2 text-xl font-bold">SEO & growth mindset</h3>
+              <p class="mt-2 apx-text-muted">We build pages that index well, convert better, and stay maintainable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container px-3 px-md-5">
+        <div class="apx-surface apx-shadow rounded-4 p-5 bg-gradient-primary">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="text-3xl font-bold">Want a website that feels premium?</h2>
+              <p class="mt-2 apx-text-muted">Let’s design, develop, and optimize your next launch.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="pricing.html" class="btn btn-apx apx-btn text-white">View Pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <footer class="apx-footer py-5">
+    <div class="container px-3 px-md-5">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <div class="fw-bold text-white fs-3">Apex Web <span class="text-sm font-light">Solutions</span></div>
+          <p class="mt-3 text-white-50">Premium web design, development, and SEO for growing brands.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-white-50 text-decoration-none" aria-label="Twitter">⌁</a>
+            <a href="#" class="text-white-50 text-decoration-none" aria-label="LinkedIn">in</a>
+            <a href="#" class="text-white-50 text-decoration-none" aria-label="GitHub">⌂</a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <div class="fw-semibold text-white">Quick links</div>
+          <ul class="list-unstyled mt-3 text-white-50">
+            <li class="mb-2"><a href="index.html" class="text-decoration-none text-white-50">Home</a></li>
+            <li class="mb-2"><a href="about.html" class="text-decoration-none text-white-50">About</a></li>
+            <li class="mb-2"><a href="services.html" class="text-decoration-none text-white-50">Services</a></li>
+            <li class="mb-2"><a href="portfolio.html" class="text-decoration-none text-white-50">Portfolio</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-3">
+          <div class="fw-semibold text-white">Services</div>
+          <ul class="list-unstyled mt-3 text-white-50">
+            <li class="mb-2"><a href="service-webdesign.html" class="text-decoration-none text-white-50">Web Design</a></li>
+            <li class="mb-2"><a href="service-webdev.html" class="text-decoration-none text-white-50">Web Development</a></li>
+            <li class="mb-2"><a href="service-seo.html" class="text-decoration-none text-white-50">SEO</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="fw-semibold text-white">Newsletter</div>
+          <p class="mt-2 text-white-50">Get product updates and SEO tips.</p>
+          <form class="mt-3" onsubmit="event.preventDefault();">
+            <div class="d-flex gap-2 flex-column flex-sm-row">
+              <input class="apx-input form-control" type="email" placeholder="Email address" aria-label="Email" required />
+              <button class="btn btn-apx apx-btn text-white" type="submit">Join</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="mt-4 pt-4 border-top border-light border-opacity-25 d-flex flex-column flex-md-row justify-content-between gap-2">
+        <div class="text-white-50">© <span id="year"></span> Apex Web Solutions. All rights reserved.</div>
+        <div class="text-white-50">Built with Tailwind + Bootstrap</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="theme.js"></script>
+  <script src="main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
